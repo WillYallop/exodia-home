@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $accent;
+    font-family: 'Lato', sans-serif;
+}
+
+::selection {background-color: $accent3; color: $accent2;}
+img {
+    &::selection {
+        background-color: transparent !important; 
+        color: #FFF;
+    }
+}
+.pageContentCon {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+.wrapper {
+    @include siteHorizontalPadding;
+    width: 100%;
+    max-width: $maxWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
+.compCon {
+    padding-top: compTopPadding(0);
+    padding-bottom: compBotPadding(0);
+    z-index: 10;
+    position: relative;
+}
+.slantCon {
+    height: 200px;
+    width: 100%;
+    background-color: $accent2;
+    z-index: 0;
+    &.topSlant {
+        clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+        margin-bottom: -1px;
+    };
+    &.botSlant {
+        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 100%);
+        margin-top: -1px;
+    };
+    @include forBreakpoint(mobile tablet){
+        height: 100px;
+    };
+}
+
+.inputStyle {
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px 0 10px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    &.inputError {
+        border: 1px solid red;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.textareaStyle {
+    height: 150px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px 0 0;
+    font-size: 16px;
+    padding: 10px;
+    font-family: 'Lato', sans-serif !important;
+    resize: none;
+    &.inputError {
+        border: 1px solid red;
+    }
+    &:focus {
+        outline: none;
+    }
+}

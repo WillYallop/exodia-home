@@ -1,0 +1,6 @@
+@function compTopPadding($addTopPadding) {
+    @return $compVertPadding + $addTopPadding;
+}
+@function compBotPadding($addBotPadding) {
+    @return $compVertPadding + $addBotPadding;
+}

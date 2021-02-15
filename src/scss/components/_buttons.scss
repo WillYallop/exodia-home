@@ -1,0 +1,8 @@
+.buttonStyle1 {
+    @include defaultBtn;
+    background-color: $accent3;
+    color: $accent2;
+    &:hover {
+        background-color: $accent3Hover;
+    }
+}

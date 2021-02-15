@@ -1,0 +1,82 @@
+.introCon {
+    .wrapper {
+        display: flex;
+        .col1 {
+            width: 40%;
+            .col1Image {
+                width: 100%;
+                max-width: 450px;
+                margin-top: 40px;
+                @include forBreakpoint(mobile tablet){
+                    margin-top: 50px; 
+                    width: 70%;
+                }
+            }
+            @include forBreakpoint(mobile tablet){
+                width: 100%;
+            }
+        }
+        .col2 {
+            width: 60%;
+            padding-left: 80px;
+            .componentTitle {
+                @include titleText;
+            }
+            .componentSubtitle {
+                @include bodyText;
+                margin-bottom: 40px;
+            }
+            .locationColContainer{
+                display: flex;
+                .locationContainer {
+                    width: calc(50% - 10px);
+                    display: flex;
+                    align-items: center;
+                    background-color: rgba(255, 255, 255, 0.08);
+                    border-radius: 30px;
+                    padding: 10px 20px;
+                    display: flex;
+                    max-width: 230px;
+                    &:first-child {
+                        margin-right: 10px;
+                    }
+                }
+                .locationImg {
+                    width: 40px;
+                    @include forBreakpoint(mobile){
+                        width: 20px;
+                    }
+                }
+                .locationTextarea {
+                    padding-left: 10px;
+                    width: 103px;
+                    p {
+                        @include titleText;
+                        font-size: 16px;
+                        margin-bottom: 0
+                    }
+                    .locationBtn {
+                        @include defaultBtn;
+                        background-color: $accent2;
+                        padding: 5px 20px;
+                        margin-top: 5px;
+                        color: #FFF;
+                        text-decoration: none;
+                        font-size: 12px;
+                        &:hover {
+                            background-color: $accent2Hover;
+                        }
+                    }
+                }
+            }
+            @include forBreakpoint(mobile tablet){
+                width: 100%;
+                max-width: 590px; 
+                padding-left: 0;
+            }
+        }
+        @include forBreakpoint(mobile tablet){
+            flex-wrap: wrap-reverse;
+        }
+    }
+}

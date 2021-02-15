@@ -1,0 +1,61 @@
+.bannerCon {
+    padding-top: compTopPadding(80) !important;
+    background-color: $accent2;
+    max-width: 100vw;
+    .wrapper {
+        display: flex;
+        .textareaCol {
+            width: 60%;
+            max-width: 600px;
+            padding-top: 40px;
+            .siteHeading {
+                color: #FFF;
+                font-weight: 900;
+                margin-bottom: 40px;
+                line-height: clamp(3rem, 5vw, 4rem);
+                font-size: clamp(3rem, 5vw, 4rem);
+            }
+            .siteSubheading {
+                color: #FFF;
+                font-size: clamp(1.2rem, 2vw, 1rem);
+            }
+            .buttonStyle1 {
+                margin-top: 40px;
+                text-decoration: none;
+            }
+            @include forBreakpoint(mobile tablet){
+                width: 70%;
+                padding-top: 20px;
+            }
+        }
+        .imageCol {
+            padding-left: 80px;
+            position: relative;
+            .bannerImg {
+                position: absolute;
+                top: 0;
+                height: calc(100% + 200px);
+                @include forBreakpoint(mobile tablet){
+                    height: 100%;
+                }
+            }
+            .mobileVersion {
+                display: none;
+                object-fit: cover;
+                @include forBreakpoint(mobile){
+                    display: flex;
+                }
+            }
+            .desktopVersion {
+                object-fit: cover;
+                @include forBreakpoint(mobile){
+                    display: none;
+                }
+            }
+            @include forBreakpoint(mobile tablet){
+                padding-left: 40px;
+            }
+        }
+    }
+}
+ 

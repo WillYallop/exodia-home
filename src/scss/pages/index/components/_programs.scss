@@ -1,0 +1,133 @@
+.programsCon {
+    background-color: $accent2;
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .componentTitle {
+            @include titleText;
+            max-width: 380px
+        }
+        .componentSubtitle {
+            @include bodyText;
+        }
+        .programContainer {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            width: calc(100% + 10px);
+            margin-left: -5px;
+            .programOuter {
+                width: 25%;
+                padding: 0 5px;
+                
+                .programInner {
+                    width: 100%;
+                    position: relative;
+                    padding-bottom: 66.66%;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    display: block;
+                    .programContentContainer {
+                        position: absolute;
+                        top: 0; bottom: 0; left: 0; right: 0;
+                        .beforeDiv {
+                            content: '';
+                            display: block;
+                            width: 8px;
+                            height: 8px;
+                            position: absolute;
+                            transition: all .15s ease;
+                            top:  1px;
+                            left: 1px;
+                            transform-origin: top left;
+                            transform: rotate(-45deg) scale(0);
+                        }
+                        .programImage {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transform: translate(0, 0);
+                            transition: all .15s ease;
+                            z-index: 20;
+                            position: relative;
+                            border-radius: 5px;
+                        }
+                        .afterDiv {
+                            content: '';
+                            display: block;
+                            width: 8px;
+                            height: 8px;
+                            position: absolute;
+                            transition: all .15s ease;
+                            right: 1px;
+                            bottom: 1px;
+                            transform-origin: bottom right;
+                            transform: rotate(45deg) scale(0);
+                        }
+
+                        &:hover {
+                            .programImage {
+                                transform: translate(6px, -6px);
+                            }
+                            .beforeDiv {
+                                transform: rotate(-45deg) scale(1);
+                            }
+                            .afterDiv {
+                                transform: rotate(45deg) scale(1);
+                            }
+                        }
+                    }
+
+                    &.accent1 {
+                        background-color: #1e63eb;
+                        .beforeDiv {
+                            background-color: #1e63eb; 
+                        }
+                        .afterDiv {
+                            background-color: #1e63eb; 
+                        }
+                    }
+                    &.accent2 {
+                        background-color: #fd535d;
+                        .beforeDiv {
+                            background-color: #fd535d; 
+                        }
+                        .afterDiv {
+                            background-color: #fd535d; 
+                        }
+                    }
+                    &.accent3 {
+                        background-color: #d5ff00;
+                        .beforeDiv {
+                            background-color: #d5ff00; 
+                        }
+                        .afterDiv {
+                            background-color: #d5ff00; 
+                        }
+                    }
+                    &.accent4 {
+                        background-color: #1e63eb;
+                        .beforeDiv {
+                            background-color: #1e63eb; 
+                        }
+                        .afterDiv {
+                            background-color: #1e63eb; 
+                        }
+                    }
+                    @include forBreakpoint(mobile){
+                        padding-bottom: 100%;
+                    }
+                }
+                &.secondRowOuter {
+                    @include forBreakpoint(mobile){
+                        margin-top: 10px;
+                    }
+                }
+                @include forBreakpoint(mobile){
+                    width: 50%; 
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+// Header
+.headerCon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 50px;
+    z-index: 1000;
+    background-color: $accent2;
+    transition: 0.3s;
+    .wrapper {
+        @include flexAlignCenter;
+        justify-content: space-between;
+        height: 60px;
+        transition: 0.3s;
+        .siteLogoDontShow {
+            display: none;
+        }
+    }
+    .siteLogo {
+        height: 25px;
+        &.siteLogoDontShow {
+            display: none;
+        }
+    }
+    .signInBtn {
+        @include defaultBtn;
+        background-color: rgba($color: #fff, $alpha: 0.35);
+        color: #fff;
+        &:hover {
+            background-color: rgba($color: #fff, $alpha: 0.45);
+        }
+        &::after {
+            content: 'Sign In';
+        }
+        @include forBreakpoint(mobile tablet){
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            &::after {
+                content: url("../../../images/sign-in-alt-solid.png");
+                height: 15px;
+            }
+        }
+    }
+
+    &.scrolled {
+        padding-top: 0;
+        background-color: #FFF;
+        height: 60px;
+        filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.1));
+        .signInBtn {
+            background-color: $accent;
+            &:hover {
+                background-color: $accentHover;
+            }
+        }
+    }
+}

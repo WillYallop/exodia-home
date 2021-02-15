@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <module href="/components/global/head.html"></module>
+        <title>EXODIA Fitness</title>
+        <meta name="description" content="Start your fitness journery today with EXODIA Fitness. Track, plan and follow programs, and see your fitness skyrocket!"/>
+        <meta name="theme-color" content="#0C1223"/>
+        <meta name="author" content="William Yallop"/>
+        <link rel="canonical" href="https://exodiafitness.com/"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <meta name="robots" content="index, follow"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="EXODIA Fitness"/>
+        <meta property="og:description" content="Start your fitness journery today with EXODIA Fitness. Track, plan and follow programs, and see your fitness skyrocket!"/>
+        <meta property="og:image" content="images/ogImage.png"/>
+        <meta property="og:url" content="https://exodiafitness.com/"/>
+        <meta property="og:site_name" content="EXODIA Fitness"/>
+        <link preload rel="stylesheet" type="text/css"  href="css/pages/index/aboveFold.css"/>
+    </head>
+
+    <body>
+        <div class="pageContentCon">
+            <!-- Header -->
+            <module href="/components/global/header.html"></module>
+            <!-- Banner -->
+            <module href="/components/index/banner.html"></module>
+            <div class="slantCon botSlant"></div>
+            <!-- Intro  -->
+            <module href="/components/index/intro.html"></module>
+            <!-- Features -->
+            <div class="slantCon topSlant"></div>
+            <module href="/components/index/features.html"></module>
+            <div class="slantCon botSlant"></div>
+            <!-- Contact -->
+            <module href="/components/global/contact.html"></module>
+            <!-- Programs -->
+            <div class="slantCon topSlant"></div>
+            <module href="/components/index/programs.html"></module>
+            <div class="slantCon botSlant"></div> 
+            <!-- Pricing Tables -->
+            <module href="/components/index/pricing.html"></module>
+            <!-- Footer -->
+            <div class="slantCon topSlant"></div>
+            <module href="/components/global/footer.html"></module>
+        </div>
+
+
+        <!-- Main Script -->
+        <script src="bundle.js" defer async></script>
+        <!-- On Load Download the bellow fold css -->
+        <script defer async>
+            //define function to load css
+            var loadCss = function(){
+                var cssLink = document.createElement('link');
+                cssLink.rel = 'stylesheet';
+                cssLink.href = 'css/pages/index/bellowFold.css';
+                cssLink.type = 'text/css';
+                var head = document.getElementsByTagName('head')[0];
+                head.appendChild(cssLink, head);
+            };
+            //call function on window load
+            window.addEventListener('load', loadCss);
+        </script>
+    </body>
+</html>

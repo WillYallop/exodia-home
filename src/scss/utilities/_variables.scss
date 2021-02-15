@@ -1,0 +1,19 @@
+// Site Colour Variables
+$accent: #1e63eb;
+$accentHover: #195ad9;
+$accent2: #10182f;
+$accent2Hover: #0d1326;
+$accent3: #cfff25;
+$accent3Hover: #BDE828;
+$titleTextColor: #fff;
+$bodyTextColor: #f5f5f5;
+
+// Site Settings
+$compVertPadding: 50px;
+$maxWidth: 1200px;
+$sizeSiteContentWidth: 1024px;
+$mediaQueries : (
+    'mobile'    : "only screen and (max-width: 667px)",
+    'tablet'    : "only screen and (min-width: 668px) and (max-width: 1024px)",
+    'desktop'   : "only screen and (min-width: 1025px)"
+);

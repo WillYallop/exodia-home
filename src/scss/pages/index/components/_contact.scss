@@ -1,0 +1,88 @@
+.contactCon {
+    .wrapper {
+        display: flex;
+        .col {
+            width: 50%;
+            &:last-child {
+                padding-left: 80px;
+            }
+            // Col 1
+            .contactFormContainer {
+                background-color: rgba(255, 255, 255, 0.08);
+                border-radius: 20px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 40px;
+                .labelStlye {
+                    color: #FFF;
+                    padding: 0 5px;
+                }
+                .messageSentP {
+                    @include bodyText;
+                    margin-top: 20px;
+                    font-weight: normal;
+                    display: none;
+                    &.showMsg {
+                        display: flex;
+                    }
+                }
+                .submitBtn {
+                    margin-top: 20px;
+                }
+            }
+            // 2
+            .col2Textarea {
+                .componentTitle {
+                    @include titleText;
+                    max-width: 250px;
+                }
+                .rowContainer {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    .row {
+                        width: 100%;
+                        padding-bottom: 10px;
+                        display: flex;
+                        .iconContainer {
+                            padding-right: 20px;
+                            position: relative;
+                            .icon {
+                                height: 20px;
+                                width: 20px;
+                                background-color: $accent3;
+                                border-radius: 10px;
+                            }
+                            .verticalLine {
+                                position: absolute;
+                                left: 10px;
+                                width: 1px;
+                                height: 100%;
+                                background-color: #FFF;
+                            }
+                        }
+                        p {
+                            @include bodyText;
+                        }
+                        &:last-child {
+                            .verticalLine {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        @include forBreakpoint(mobile tablet){
+            flex-wrap: wrap-reverse;
+            .col {
+                width: 100%;
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

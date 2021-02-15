@@ -1,0 +1,166 @@
+.pricingCon {
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        .pricingTableContainer {
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            .tableOuter {
+                width: 50%;
+                &:first-child {
+                    padding-right: 10px;
+                    margin-top: 40px;
+                }
+                &:last-child {
+                    padding-left: 10px;
+                }
+                &.mobileActive {
+                    @include forBreakpoint(mobile){
+                        display: block;
+                    }
+                }
+                .tableInner {
+                    background-color: #fff;
+                    border-radius: 20px;
+                    box-shadow: 0px 6px 22px rgba(47, 159, 255, 0.1);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 40px 20px;
+                    transition: transform 0.3s;  
+                    position: relative;
+                    overflow: hidden;
+                    .offerBanner {
+                        position: absolute;
+                        top: 19px;
+                        right: -30px;
+                        background-color: #D5FF00;
+                        transform: rotateY(0deg) rotate(45deg);
+                        p {
+                            padding: 8px 30px;
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: #10182F;
+                        }
+                    }
+                    .toggleTableBtn {
+                        height: 20px;
+                        width: 40px;
+                        margin-bottom: 30px;
+                        border-radius: 20px;
+                        border: 1px solid #DFDFDF;
+                        background-color: #F2F2F2;
+                        position: relative;
+                        cursor: pointer;
+                        display: none;
+                        .btnPos {
+                            position: absolute;
+                            top: 1px;
+                            bottom: 1px;
+                            width: 16px;
+                            border-radius: 50%;
+                            background-color: #1E63EB;
+                            &.notActive {
+                                left: 1px;
+                            }
+                            &.activeBtn {
+                                left: 20px;
+                            }
+                        }
+                        @include forBreakpoint(mobile){
+                            display: flex;
+                        }
+                    }
+                    .tableHeader {
+                        font-size: 24px;
+                        color: #0E1C38;
+                        font-weight: bold;
+                    }
+                    .underline {
+                        width: 80%;
+                        border-bottom: 1px solid #F3F3F3;
+                        margin: 20px 0 15px;
+                    }
+                    .priceContainer {
+                        display: flex;
+                        margin-bottom: 30px;
+                        position: relative;
+                        .priceSymbolP {
+                            position: absolute;
+                            top: 15px;
+                            left: -10px;
+                            font-size: 14px;
+                            color: #5F5F5F;
+                            font-weight: bold;
+                        }
+                        .firstNumP {
+                            color: #0E1C38;
+                            font-size: 90px;
+                            line-height: 90px;
+                            font-weight: 900;
+                        }
+                        .secondNumP {
+                            color: #0E1C38;
+                            font-size: 60px;
+                            line-height: 60px;
+                            font-weight: 900;
+                            margin-top: 6px;
+                        }
+                        .periodP {
+                            color: #5F5F5F;
+                            font-size: 16px;
+                            line-height: 16px;
+                            margin-top: -2px;
+                        }
+                    }
+                    .tableUl {
+                        color: #202020;
+                        margin: 0;
+                        padding: 0;
+                        li {
+                            list-style-type: none;
+                            padding: 10px 0;
+                            text-align: center;
+                        }
+                    }
+                }
+                @include forBreakpoint(mobile){
+                    width: 100%; 
+                    margin: 0 auto; 
+                    display: none;
+                    &:first-child {
+                        padding-right: 0;
+                        margin-top: 0;
+                    }
+                    &:last-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+            @include forBreakpoint(mobile tablet){
+                width: 100%; 
+                margin-top: 40px;
+            }
+        }
+        .textareaContainer {
+            width: 40%;
+            padding-left: 80px;
+            .componentTitle {
+                @include titleText;
+            }
+            .componentSubtitle{
+                @include bodyText;
+                max-width: 567px;
+            }
+            .standardBtn {
+                margin-top: 40px;
+            }
+            @include forBreakpoint(mobile tablet){
+                width: 100%; 
+                padding-left: 0;
+            }
+        }
+    }
+}
